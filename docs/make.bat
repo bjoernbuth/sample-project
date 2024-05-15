@@ -4,9 +4,15 @@ pushd %~dp0
 
 REM Command file for Sphinx documentation
 
+@REM if "%SPHINXBUILD%" == "" (
+set SPHINXBUILD="C:\Users\bj\AppData\Roaming\Python\Python310\Scripts\sphinx-build.exe"
 if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
+
+echo %SPHINXBUILD%
+echo ----------------------------
+
 set SOURCEDIR=.
 set BUILDDIR=_build
 
