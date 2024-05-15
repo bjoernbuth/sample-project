@@ -1,5 +1,7 @@
 # Sphinx flow diagram for tools
 
+- test (try to change the repo name via ./git/description)
+
 ```mermaid
 flowchart TD
     A[sphinx-apidoc] -->|Generates| B(RST Files)
@@ -28,13 +30,13 @@ This is a template for using [Sphinx](https://www.sphinx-doc.org/en/master/)
 and [Sphinx-Gallery](https://sphinx-gallery.github.io/stable/index.html)
 to document a Python package with examples. It includes:
 
-* a sample package (`SampleModule`) with two modules:
-  * `module.py` which defines an example class and an example function
-  * `data_download.py` which provides functions for downloading large
+- a sample package (`SampleModule`) with two modules:
+  - `module.py` which defines an example class and an example function
+  - `data_download.py` which provides functions for downloading large
       datasets required for examples and storing the path to the downloaded
       datasets to ensure that they are only downloaded once
-* two galleries of examples that demonstrate Sphinx-Gallery functions
-* a way to automatically build the documentation whenever the repository is
+- two galleries of examples that demonstrate Sphinx-Gallery functions
+- a way to automatically build the documentation whenever the repository is
   pushed to
 
 # Quick start
@@ -111,9 +113,9 @@ The following projects use a similar method to make datasets available when
 building their examples and can be looked to for guidance, especially if your
 project has specific data needs:
 
-* [MNE-python](https://github.com/mne-tools/mne-python), specifically
+- [MNE-python](https://github.com/mne-tools/mne-python), specifically
   [dataset/utils](https://github.com/mne-tools/mne-python/blob/master/mne/datasets/utils.py)
-* [scikit-learn](https://github.com/scikit-learn/scikit-learn), specifically
+- [scikit-learn](https://github.com/scikit-learn/scikit-learn), specifically
   [datasets/_base](https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/datasets/_base.py#L39-L41)
 
 # Automatic document building
