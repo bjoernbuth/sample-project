@@ -1,3 +1,27 @@
+# Sphinx flow diagram for tools
+
+```mermaid
+flowchart TD
+    A[sphinx-apidoc] -->|Generates| B(RST Files)
+    B -->|Contain| C(automodule)
+    B -->|Contain| D(autosummary)
+    E[Python Source Code] -->|Docstrings| C
+    E -->|Docstrings| D
+    C -->|Fetches Documentation| G[autodoc]
+    D -->|Creates Summaries| H[autosummary]
+    G --> I[Documentation Content]
+    H --> J[Summary Tables]
+    I --> K[sphinx-build]
+    J --> K
+    K --> L[HTML, PDF, etc.]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#ccf,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style K fill:#f96,stroke:#333,stroke-width:4px
+    style L fill:#9f6,stroke:#333,stroke-width:2px
+```
+
 # Sphinx-Gallery template
 
 This is a template for using [Sphinx](https://www.sphinx-doc.org/en/master/)
@@ -5,8 +29,8 @@ and [Sphinx-Gallery](https://sphinx-gallery.github.io/stable/index.html)
 to document a Python package with examples. It includes:
 
 * a sample package (`SampleModule`) with two modules:
-    * `module.py` which defines an example class and an example function
-    * `data_download.py` which provides functions for downloading large
+  * `module.py` which defines an example class and an example function
+  * `data_download.py` which provides functions for downloading large
       datasets required for examples and storing the path to the downloaded
       datasets to ensure that they are only downloaded once
 * two galleries of examples that demonstrate Sphinx-Gallery functions
@@ -16,11 +40,14 @@ to document a Python package with examples. It includes:
 # Quick start
 
 1. Clone this repository:
+
     ```
     git clone https://github.com/sphinx-gallery/sample-project.git
     ```
+
 2. Update the `SampleModule` to include your package modules instead
 3. Update the `docs/conf.py` with your project details in this section:
+
     ```
     # -- Project information -----------------------------------------------------
 
@@ -30,7 +57,9 @@ to document a Python package with examples. It includes:
     # The full version, including alpha/beta/rc tags
     release = '0.0.1'
     ```
+
    and desired gallery configurations in this section:
+
     ```
     # sphinx-gallery configuration
     sphinx_gallery_conf = {
@@ -47,11 +76,14 @@ to document a Python package with examples. It includes:
         'doc_module': ('SampleModule'),
     }
     ```
+
 4. Update `sample-gallery-1` and `sample-gallery-2` to your own example
    galleries. Use the command:
+
     ```
-    $ make html
+    make html
     ```
+
    from the directory `docs/` to build the documentation and see the effects of
    your changes to the example `.py` files.
 
@@ -78,6 +110,7 @@ use.
 The following projects use a similar method to make datasets available when
 building their examples and can be looked to for guidance, especially if your
 project has specific data needs:
+
 * [MNE-python](https://github.com/mne-tools/mne-python), specifically
   [dataset/utils](https://github.com/mne-tools/mne-python/blob/master/mne/datasets/utils.py)
 * [scikit-learn](https://github.com/scikit-learn/scikit-learn), specifically
